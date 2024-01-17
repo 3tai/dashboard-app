@@ -4,11 +4,11 @@ import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 import { useSearchParams, usePathname, useRouter } from 'next/navigation';
 
 export default function Search({ placeholder }: { placeholder: string }) {
-  // use next/navigation APIs
+  // next/navigation APIs
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const { replace } = useRouter();
-  // handleSearch function 
+  // handleSearch function using search params
   function handleSearch(term: string) {
     console.log(`Searching...${term}`);
     const params = new URLSearchParams(searchParams);
