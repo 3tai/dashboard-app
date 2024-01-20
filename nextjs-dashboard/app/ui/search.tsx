@@ -7,10 +7,11 @@ import { useSearchParams, usePathname, useRouter } from 'next/navigation';
 
 export default function Search({ placeholder }: { placeholder: string }) {
   // next/navigation APIs
-  // search params, pathname and router
+  // router, search params and pathname
+  const { replace } = useRouter();
   const searchParams = useSearchParams();
   const pathname = usePathname();
-  const { replace } = useRouter();
+  
   // refactored handleSearch function to arrow function while using debounce
   const handleSearch = useDebouncedCallback((term) => {
     console.log(`Searching...${term}`);
